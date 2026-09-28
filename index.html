@@ -3,140 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="김유미의 경험, 성장 기록, 보안 프로젝트와 대표작을 담은 커리어 스토리" />
   <title>김유미 | Career Story</title>
-  <meta name="description" content="김유미의 경험, 성장 기록, 대표작을 담은 커리어 소개 페이지" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <p class="eyebrow">CAREER STORY</p>
-      <h1>김유미</h1>
-      <p class="tagline">낯선 상황에서도 먼저 시작하고, 부족한 부분을 고치며 끝까지 이어가는 사람</p>
-      <nav class="quick-links" aria-label="주요 메뉴">
-        <a href="#story">나의 이야기</a>
-        <a href="#numbers">기록으로 보는 나</a>
-        <a href="#works">대표작</a>
-        <a href="#resume">지원 문서</a>
-        <a href="https://github.com/youmjjang" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
+  <header class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">CAREER STORY · CYBERSECURITY</p>
+        <h1>김유미</h1>
+        <p class="tagline">낯선 상황에서도 먼저 시작하고, 부족한 부분을 고치며 끝까지 이어가는 사람</p>
+        <p class="hero-summary">컴퓨터소프트웨어 전공 경험과 다양한 현장 경험을 거쳐, 현재는 로그 분석과 보안 자동화를 중심으로 결과물을 만들고 있습니다.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#story">3분 이야기 보기</a>
+          <a class="button" href="#works">대표작 보기</a>
+          <a class="button" href="https://github.com/youmjjang" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <aside class="hero-note" aria-label="현재 관심 분야">
+        <span>NOW</span>
+        <strong>Security · Log Analysis · Automation</strong>
+        <p>문제를 발견하는 데서 끝나지 않고, 원인을 좁히고 반복 대응을 자동화하는 흐름에 관심이 있습니다.</p>
+      </aside>
     </div>
   </header>
 
+  <nav class="sticky-nav" aria-label="페이지 메뉴">
+    <div class="wrap nav-inner">
+      <a href="#story">이야기</a>
+      <a href="#strengths">3가지 능력</a>
+      <a href="#numbers">기록</a>
+      <a href="#works">대표작</a>
+      <a href="#timeline">경험</a>
+      <a href="#update">갱신 장치</a>
+    </div>
+  </nav>
+
   <main>
     <section id="story" class="section wrap">
-      <p class="section-kicker">STORY</p>
+      <p class="section-kicker">01 · STORY</p>
       <h2>해 보고 나서 알게 된 것들</h2>
-      <div class="story-grid">
-        <article class="story-card">
-          <span class="date">대학 재학 중</span>
-          <h3>일주일 만에 그만두고 싶었던 첫 카페</h3>
-          <p>처음 카페 아르바이트를 시작했을 때는 주문을 받고 음료를 만드는 모든 일이 낯설었다. 일을 시작한 지 일주일쯤 되었을 때 진지하게 그만둘 생각도 했다. 그래도 바로 결론을 내리기보다 하루를 더 나가 보고, 다음 근무를 한 번 더 해 봤다. 반복하면서 전에는 찾던 물건을 바로 집게 되고, 한 번 틀린 순서를 다음에는 덜 틀리는 변화를 확인했다.</p>
-          <p class="ability">자기조절력 · 서툰 상태와 나에게 맞지 않는 상태를 바로 같은 것으로 보지 않게 된 경험</p>
-        </article>
+      <p class="lead">제 경험은 한 방향으로만 이어지지는 않았습니다. 대신 새로운 환경에서 직접 해 보고, 맞는지 확인하고, 막히면 고치는 방식은 계속 반복되었습니다.</p>
 
-        <article class="story-card">
-          <span class="date">2023</span>
-          <h3>일본어를 거의 못한 채 시작한 교환학생</h3>
-          <p>2023년 일본에서 반년가량 교환학생으로 생활했다. 익숙하지 않은 언어와 생활 환경에서 모든 것을 완벽히 준비한 뒤 움직이는 것은 불가능했다. 모르면 물어보고, 우선 해 보고, 안 되면 다시 확인하는 방식으로 생활했다. 이때부터 새로운 일을 앞두고 오래 고민하기보다 실제로 해 보면서 다음 방법을 찾는 태도가 자리 잡았다.</p>
-          <p class="ability">자기동기력 · 완벽한 준비보다 실행을 먼저 선택하고 필요한 부분을 보완하는 방식</p>
-        </article>
-
-        <article class="story-card">
-          <span class="date">첫 회사 퇴사 이후</span>
-          <h3>다른 카페에서 다시 생활의 리듬을 만들다</h3>
-          <p>첫 회사를 짧게 다닌 뒤에는 바로 다음 진로의 답을 찾지 못했다. 그래서 대학 때 일했던 곳과는 다른 카페에서 다시 일을 시작했다. 처음에는 새 업장의 방식부터 다시 익혔지만, 시간이 지나며 새 직원에게 업무를 설명하고 동료들의 의견을 정리해 운영상의 불편을 제안하는 역할까지 맡게 됐다. 함께 일한 동료에게 받은 편지를 통해 평범하게 했던 행동도 누군가에게는 의미 있게 남을 수 있다는 것을 알게 됐다.</p>
-          <p class="ability">대인관계력 · 직접 보고 판단하고, 설명하고, 의견을 모아 말하는 방식으로 관계를 만들어 간 경험</p>
-        </article>
+      <div class="story-long">
+        <p>대학 재학 중 처음 카페 아르바이트를 시작했을 때는 주문을 받고 음료를 만드는 모든 과정이 낯설었습니다. 일을 시작한 지 일주일쯤 되었을 때는 진지하게 그만둘 생각도 했습니다. 다만 그 자리에서 바로 결론을 내리기보다 하루를 더 나가 보고, 다음 근무를 한 번 더 해 봤습니다. 그러자 전에는 찾느라 멈추던 물건을 바로 집게 되고, 한 번 틀린 순서를 다음에는 덜 틀리는 작은 변화가 보였습니다. 이 경험을 통해 처음 서툰 상태와 정말 나에게 맞지 않는 상태를 바로 같은 것으로 판단하지 않게 되었습니다.</p>
+        <p>대학에서는 컴퓨터소프트웨어를 전공하며 같은 방식을 코드와 프로젝트에 적용했습니다. 오류가 나면 전체가 안 된다고 보기보다 마지막으로 정상 작동한 지점을 찾고, 기능을 작게 나누어 확인했습니다. 두 명이 함께 만든 출발시간 알람 앱에서도 API 응답, 화면 연결, RecyclerView와 Adapter를 하나씩 확인하며 기능을 이어 붙였습니다. 완벽한 결과보다 실제로 작동하는 작은 결과를 먼저 만드는 편이 저에게 잘 맞는다는 것도 이때 알게 되었습니다.</p>
+        <p>2023년에는 일본에서 반년가량 교환학생으로 생활했습니다. 일본어가 충분하지 않은 상태에서 수업과 생활을 시작했기 때문에 모든 것을 완벽하게 준비한 뒤 움직이는 것은 불가능했습니다. 모르면 물어보고, 우선 해 보고, 안 되면 다시 확인했습니다. VBA로 주사위 게임을 만드는 과제 역시 기능을 나누어 구현했습니다. 이 시기부터 ‘다 준비한 뒤 시작하자’보다 ‘일단 시작하고 필요한 부분을 보완하자’는 방식이 더 분명해졌습니다.</p>
+        <p>첫 회사에서는 R&amp;D 업무를 맡아 낯선 용어와 많은 문서를 이해하려고 했습니다. 흩어진 정보를 기능별로 정리하고, 필요한 자료 형태를 제안해 직접 정리하는 일도 맡았습니다. 하지만 일을 이해하는 것과 환경 전체가 나에게 맞는지는 다른 문제라는 것도 경험했습니다. 오래 버티는 것만이 답은 아니라고 판단해 퇴사를 선택했고, 곧바로 정답을 찾기보다 다른 카페에서 다시 일하며 생활의 리듬부터 만들었습니다.</p>
+        <p>두 번째 카페는 대학 때 일했던 첫 카페와 다른 업장이었습니다. 이곳에서는 시간이 지나며 새 직원에게 업무를 설명하고, 동료들의 의견을 모아 운영상의 불편을 제안하고, 더 많은 역할을 맡게 되었습니다. 함께 일한 동료에게 받은 편지를 통해 제가 평범하게 했다고 생각한 행동도 누군가에게는 오래 남을 수 있다는 것을 알게 되었습니다. 익숙하고 잘할 수 있는 일을 계속하는 대신 다시 보안 공부를 시작한 것도 이 시기였습니다.</p>
+        <p>현재는 네트워크와 정보보안을 다시 배우면서 개인 프로젝트와 팀 프로젝트를 진행하고 있습니다. 로그를 읽고, 조건을 만들고, 경고와 정책으로 연결하는 과정에 특히 관심이 있습니다. 과제를 빠르게 끝내는 것만으로는 부족하다고 생각해 결과를 한 번 더 확인하고, 복잡한 내용은 다른 사람이 볼 수 있도록 정리하려고 합니다. 지금의 저는 한 번에 완벽하게 해내는 사람보다, 직접 확인하고 시작한 뒤 부족한 부분을 고치며 다음 단계로 이어가는 쪽에 가깝습니다.</p>
       </div>
 
-      <div class="present-box">
-        <h3>지금</h3>
-        <p>현재는 보안 분야에서 로그를 분석해 이상 징후와 원인을 찾고, 반복되는 대응을 자동화하는 일에 관심을 두고 있다. 새로운 과제나 프로젝트를 받으면 작은 결과부터 만들고, 막히는 부분을 나눠 확인하고, 필요한 부분을 다시 정리하는 방식으로 진행한다. 한 번에 완벽하게 해내는 사람보다, 직접 확인하고 해 보고 안 되면 고치면서 다음 단계로 이어가는 사람이 되고 싶다.</p>
+      <div class="story-flow" aria-label="이야기 흐름 요약">
+        <article><span>고비</span><strong>처음부터 잘하지 못했던 경험과 첫 회사의 중단</strong></article>
+        <div class="arrow">→</div>
+        <article><span>다시 시작</span><strong>다른 환경에서 생활의 리듬과 자신감을 회복</strong></article>
+        <div class="arrow">→</div>
+        <article><span>현재</span><strong>보안 로그 분석과 자동화를 결과물로 연결</strong></article>
       </div>
     </section>
 
-    <section id="numbers" class="section alt">
+    <section id="strengths" class="section alt">
       <div class="wrap">
-        <p class="section-kicker">EVIDENCE</p>
-        <h2>기록으로 보는 나</h2>
-        <div class="stats">
-          <article class="stat"><strong>31일</strong><span>리추얼 기록</span><small>출처: 리추얼 기록</small></article>
-          <article class="stat"><strong>31회</strong><span>아침 기록</span><small>출처: 리추얼 기록</small></article>
-          <article class="stat"><strong>30회</strong><span>마무리 기록</span><small>출처: 리추얼 기록</small></article>
-          <article class="stat"><strong>1일</strong><span>결석</span><small>출처: 내 출석 기록 · 국취제 일정</small></article>
-          <article class="stat"><strong>11개</strong><span>마스터 승인</span><small>출처: 내 제출 현황</small></article>
-        </div>
-
-        <div class="evidence-list">
-          <article>
-            <span class="date">2026-09-08 → 2026-09-16</span>
-            <h3>못한 날을 다음 행동으로 바꾸기</h3>
-            <p>9월 8일에는 경청을 목표로 정했지만 저녁에 스스로 “못 했다”고 기록했다. 이후 9월 16일에는 말을 끊지 않고 듣는 것을 첫 행동으로 정했고, 마무리 기록에는 상대의 말에 귀 기울이려 노력했다고 남겼다.</p>
+        <p class="section-kicker">02 · THREE ABILITIES</p>
+        <h2>세 가지 능력이 보이는 장면</h2>
+        <div class="ability-grid">
+          <article class="ability-card">
+            <div class="ability-number">01</div>
+            <h3>자기조절력</h3>
+            <p class="ability-title">못한 날을 숨기기보다 다음 행동을 바꿉니다.</p>
+            <p>2026-09-08에는 경청을 목표로 정했지만 마무리 기록에 스스로 “못 했다”고 남겼습니다. 이후 09-16에는 “말을 끊지 않고 열심히 듣겠습니다”를 첫 행동으로 정했고, 실제 마무리 기록에도 상대의 말에 귀 기울이려 노력했다고 적었습니다.</p>
+            <span class="source-chip">리추얼 기록</span>
           </article>
-          <article>
-            <span class="date">2026-09-18</span>
-            <h3>상황이 좋지 않아도 해야 할 일을 다시 붙잡기</h3>
-            <p>맡은 일을 책임감 있게 수행하겠다고 정하고, 남는 시간에 프로젝트를 진행했다고 기록했다. 같은 날 동료 기록에도 몸이 불편한 상황에서도 등원한 점과 챌린지 도전을 이어간 점이 남아 있다.</p>
+          <article class="ability-card">
+            <div class="ability-number">02</div>
+            <h3>대인관계력</h3>
+            <p class="ability-title">먼저 판단하기보다 직접 보고, 설명하고, 듣습니다.</p>
+            <p>두 번째 카페에서는 주변 평가만으로 새 직원을 판단하지 않고 실제로 함께 일한 뒤 필요한 순서를 나누어 설명했습니다. 교육 과정에서도 경청과 리액션, 피드백 반영을 반복해서 목표로 잡았습니다.</p>
+            <span class="source-chip">T11 · 리추얼 기록</span>
           </article>
-          <article>
-            <span class="date">2026-09-21 / 2026-09-23</span>
-            <h3>경청을 반복해서 연습하기</h3>
-            <p>다른 사람의 이야기에 경청하고 반응을 크게 하겠다는 목표를 세우고 실천했으며, 9월 23일에도 말을 끊지 않고 끝까지 듣는 것을 첫 행동으로 다시 정했다.</p>
+          <article class="ability-card">
+            <div class="ability-number">03</div>
+            <h3>자기동기력</h3>
+            <p class="ability-title">완벽한 준비를 기다리기보다 작은 결과부터 만듭니다.</p>
+            <p>교환학생, 앱 개발, 보안 프로젝트에서 공통적으로 먼저 실행한 뒤 막힌 지점을 찾아 고치는 방식을 사용했습니다. 2026-09-03 리추얼에서도 “모든 환경에 빠르게 적응”, “우선 시도하고 보겠습니다”를 직접 기록했습니다.</p>
+            <span class="source-chip">T09 · T11 · 리추얼 기록</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="works" class="section wrap">
-      <p class="section-kicker">WORKS</p>
-      <h2>대표작</h2>
-      <div class="works-grid">
-        <article class="work-card featured">
-          <span class="badge">T10</span>
-          <h3>웹 로그 기반 보안 알림 실험</h3>
-          <p>웹 로그 조건을 정하고 반복 실험을 통해 탐지·알림 결과를 확인한 연구 과제다. 실험 로그, 결과 CSV, 재현 자료와 실행 소스를 함께 정리했다.</p>
-          <p class="meta">연구·실험 · 로그 분석 · 재현 가능성</p>
+    <section id="numbers" class="section wrap">
+      <p class="section-kicker">03 · EVIDENCE</p>
+      <h2>기록으로 확인한 지속성</h2>
+      <p class="lead">좋아 보이는 문장만 고르기보다 실제 기록에서 반복된 행동과, 잘하지 못했다고 적은 날까지 함께 봤습니다.</p>
+      <div class="stats">
+        <article class="stat"><strong>31일</strong><span>리추얼 기록</span><small>출처: 리추얼 기록</small></article>
+        <article class="stat"><strong>31회</strong><span>아침 기록</span><small>출처: 리추얼 기록</small></article>
+        <article class="stat"><strong>30회</strong><span>마무리 기록</span><small>출처: 리추얼 기록</small></article>
+        <article class="stat"><strong>1일</strong><span>결석</span><small>출처: 내 출석 기록</small></article>
+        <article class="stat"><strong>11개</strong><span>마스터 승인</span><small>출처: 내 제출 현황</small></article>
+      </div>
+
+      <div class="record-grid">
+        <article class="record-card">
+          <span class="date">2026-08-26</span>
+          <h3>“오늘은 진짜 아무것도 안했다”</h3>
+          <p>잘한 기록만 남기지 않았습니다. 그날은 강점 행동을 “못 했다”고 적고 다음 날부터 제대로 하겠다고 남겼습니다.</p>
         </article>
-        <article class="work-card">
-          <span class="badge">PROJECT</span>
-          <h3>Mini SOC</h3>
-          <p>Python으로 웹 로그를 읽어 오류 상태와 IP별 반복 접근을 탐지하고, 경보 JSON·알림 서버·일일 리포트까지 연결한 개인 프로젝트.</p>
-          <p class="meta">Python · Docker · Nginx · Flask · 로그 탐지 자동화</p>
+        <article class="record-card">
+          <span class="date">2026-09-11</span>
+          <h3>계획한 일을 먼저 수행</h3>
+          <p>“계획한 일을 완수”를 가치로 정하고, 마무리에는 “오늘 해야 할 일을 먼저 수행”했다고 기록했습니다.</p>
         </article>
-        <article class="work-card">
-          <span class="badge">TEAM</span>
-          <h3>NexusGuard</h3>
-          <p>외부 AI·SaaS 접근 위험을 판단하고 승인·정책 흐름으로 연결하는 보안 프로젝트. 이벤트 수집, 위험 분류, 정책 반영 구조를 설계하고 구현했다.</p>
-          <p class="meta">Zero Trust · RBAC · 로그 상관분석 · 정책 자동화</p>
+        <article class="record-card">
+          <span class="date">2026-09-18</span>
+          <h3>남는 시간에도 프로젝트 진행</h3>
+          <p>맡은 일을 책임감 있게 수행하는 것을 목표로 잡았고, 남는 시간에 프로젝트를 계속 진행했습니다.</p>
         </article>
-        <article class="work-card pending">
-          <span class="badge">T13</span>
-          <h3>앱 대표작</h3>
-          <p>T13 완료 후 실제 앱 결과물과 핵심 기능을 이 자리에 추가한다.</p>
-          <p class="meta">예정</p>
+        <article class="record-card">
+          <span class="date">2026-09-21 · 09-23</span>
+          <h3>경청을 반복해서 연습</h3>
+          <p>리액션과 경청을 목표로 잡은 뒤, 이틀 뒤에도 “말을 끊지 않고 끝까지 듣기”를 첫 행동으로 다시 설정했습니다.</p>
         </article>
+      </div>
+
+      <div class="note-box"><strong>회복탄력성</strong><p>잘 안 된 날을 없애는 대신 기록하고 다음 행동을 수정하는 방식으로 봅니다.</p><strong>과제지속력</strong><p>31일의 기록과 프로젝트 진행 기록에서 ‘다시 붙잡기’, ‘먼저 수행하기’, ‘남는 시간 활용하기’가 반복됩니다.</p></div>
+    </section>
+
+    <section id="works" class="section alt">
+      <div class="wrap">
+        <p class="section-kicker">04 · SELECTED WORKS</p>
+        <h2>대표작과 프로젝트</h2>
+        <div class="works-grid">
+          <article class="work-card featured">
+            <div class="work-top"><span class="badge">T10 · RESEARCH</span><span class="work-date">2026-09-22</span></div>
+            <h3>정상 사용자의 오류 발생 패턴과 오탐</h3>
+            <p>정상 사용자의 오류 총량이 같더라도, 오류가 짧은 시간에 집중되면 IP 단위 오탐률이 달라지는지 확인한 모의 웹 로그 실험입니다.</p>
+            <ul class="clean-list">
+              <li>정식 반복 30회 · 모의 로그 90개</li>
+              <li>정식 요청 402,753행</li>
+              <li>60초·5회 기준 A 평균 FPR 약 3.17%, B 약 70.89%</li>
+              <li>B-A 평균 차이 약 67.72%p</li>
+              <li>CSV 132개 SHA-256 재현 비교 PASS</li>
+            </ul>
+            <p class="scope-note">실제 서비스 사용자의 행동 빈도나 운영 기준을 추정한 연구가 아니라, 명시한 생성 규칙 아래에서 시간 분포 효과를 비교한 모의 실험입니다.</p>
+            <div class="tag-row"><span>Python</span><span>Web Log</span><span>FPR</span><span>Reproducibility</span></div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-top"><span class="badge">PERSONAL</span><span class="work-date">Mini SOC</span></div>
+            <h3>로그 탐지 → 경보 → 알림 → 리포트</h3>
+            <p>Docker와 Nginx에서 발생한 로그를 Python으로 파싱하고, 상태 코드와 IP별 반복 접근을 기준으로 경보를 생성해 Flask 알림 서버와 일일 Markdown 리포트까지 연결했습니다.</p>
+            <div class="project-flow"><span>Nginx</span><b>→</b><span>Parser</span><b>→</b><span>Alert JSON</span><b>→</b><span>Flask</span><b>→</b><span>Report</span></div>
+            <p class="what-i-did"><strong>내가 한 일</strong> 로그 파서, 오류 조건, IP 집계, 알림 서버, 예외 처리, 날짜별 리포트 흐름을 직접 연결했습니다.</p>
+            <div class="tag-row"><span>Python</span><span>Docker</span><span>Nginx</span><span>Flask</span></div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-top"><span class="badge">TEAM</span><span class="work-date">NexusGuard</span></div>
+            <h3>외부 AI/SaaS 위험 기반 승인 자동화</h3>
+            <p>외부 AI·SaaS 접근 이벤트를 수집해 위험도를 분류하고, 정책 판단과 승인 흐름으로 연결하는 보안 프로젝트입니다.</p>
+            <p class="what-i-did"><strong>내가 집중한 부분</strong> 단순히 LLM에게 판단을 모두 맡기는 구조의 한계를 줄이기 위해 알려진 서비스 규칙, 임계치, 이벤트 상관분석을 먼저 적용하고 필요한 경우에만 AI 판단을 사용하는 구조를 고민했습니다.</p>
+            <div class="tag-row"><span>Zero Trust</span><span>RBAC</span><span>Correlation</span><span>Policy</span></div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-top"><span class="badge">ANDROID</span><span class="work-date">Capstone</span></div>
+            <h3>출발시간 알람 앱</h3>
+            <p>두 명이 함께 목적지 검색과 이동 시간을 연결해 ‘언제 출발해야 하는지’를 알려 주는 Android 앱을 만들었습니다.</p>
+            <p class="what-i-did"><strong>문제 해결 방식</strong> API 요청, 응답, 필요한 값 추출, RecyclerView 전달 단계를 나누어 확인하며 자동완성과 화면 연결 문제를 해결했습니다.</p>
+            <div class="tag-row"><span>Android</span><span>Retrofit</span><span>RecyclerView</span><span>API</span></div>
+          </article>
+
+          <article class="work-card link-card">
+            <span class="badge">ALEPH</span>
+            <h3>과정에서 만든 결과물</h3>
+            <div class="link-list">
+              <a href="https://youmjjang.github.io/About-me/" target="_blank" rel="noopener"><strong>T01</strong><span>나를 소개하는 한 페이지</span></a>
+              <a href="https://youmjjang.github.io/MOVE_TIME_GAME/" target="_blank" rel="noopener"><strong>T02</strong><span>10스테이지 미니게임</span></a>
+              <a href="https://youmjjang.github.io/MEME_CARD/" target="_blank" rel="noopener"><strong>T03</strong><span>짤·카드 스튜디오</span></a>
+              <a href="https://youmjjang.github.io/Real-Information-Board/" target="_blank" rel="noopener"><strong>T04</strong><span>오늘의 진짜 정보판</span></a>
+              <a href="https://cutie-street-island-diary.youmnana19.chatgpt.site/" target="_blank" rel="noopener"><strong>T07</strong><span>인증·권한을 적용한 다이어리</span></a>
+            </div>
+          </article>
+
+          <article class="work-card pending">
+            <span class="badge neutral">T13 · RESERVED</span>
+            <h3>앱 대표작 자리</h3>
+            <p>T13 완료 뒤 실제 앱 결과물, 핵심 기능, 직접 한 일, 막힌 지점과 수정 내용을 이 위치에 추가합니다.</p>
+            <div class="placeholder-line"></div><div class="placeholder-line short"></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="resume" class="section alt">
-      <div class="wrap document-box">
-        <p class="section-kicker">DOCUMENTS</p>
-        <h2>지원 문서</h2>
-        <p>이력서·자기소개서·경력기술서는 BR-A 제출 파일로 별도 제공한다.</p>
-        <div class="doc-points">
-          <span>이력서</span><span>자기소개서</span><span>경력기술서</span>
+    <section id="timeline" class="section wrap">
+      <p class="section-kicker">05 · EXPERIENCE</p>
+      <h2>경험이 이어진 순서</h2>
+      <div class="timeline">
+        <article><div class="dot"></div><div><span>대학 재학 중</span><h3>컴퓨터소프트웨어 전공 · 첫 카페 아르바이트</h3><p>처음의 서툶을 견디는 법과, 실제로 해 본 뒤 판단하는 기준을 만들었습니다.</p></div></article>
+        <article><div class="dot"></div><div><span>대학 캡스톤</span><h3>출발시간 알람 Android 앱</h3><p>작은 기능 단위로 확인하고 팀원과 화면에서 연결하는 개발 방식을 경험했습니다.</p></div></article>
+        <article><div class="dot"></div><div><span>2023</span><h3>일본 교환학생</h3><p>완벽한 준비보다 실행과 수정이 자신에게 맞는 방식이라는 것을 확인했습니다.</p></div></article>
+        <article><div class="dot"></div><div><span>첫 직장</span><h3>R&amp;D · POC 및 문서 정리</h3><p>복잡한 자료를 구조화하는 일에 집중할 수 있다는 점과, 버티는 것과 멈추는 것을 구분하는 기준을 배웠습니다.</p></div></article>
+        <article><div class="dot"></div><div><span>퇴사 이후</span><h3>두 번째 카페 · 역할 확대</h3><p>새 직원을 설명하고, 의견을 모아 제안하고, 신뢰를 쌓는 경험을 했습니다. 첫 카페와는 다른 업장입니다.</p></div></article>
+        <article><div class="dot active"></div><div><span>2026 · NOW</span><h3>정보보안 학습 · 취업 준비</h3><p>로그 분석, 탐지, 자동화, 정책 판단을 프로젝트로 구현하며 보안 직무를 준비하고 있습니다.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section alt" id="method">
+      <div class="wrap">
+        <p class="section-kicker">06 · HOW I WORK</p>
+        <h2>제가 문제를 다루는 방식</h2>
+        <div class="method-grid">
+          <article><span>1</span><h3>먼저 작은 결과를 만듭니다</h3><p>전체를 한 번에 완성하려 하기보다 작동 여부를 먼저 확인합니다.</p></article>
+          <article><span>2</span><h3>마지막 정상 지점을 찾습니다</h3><p>오류가 나면 어디까지 값이 들어왔는지 범위를 줄여 원인을 확인합니다.</p></article>
+          <article><span>3</span><h3>기록하고 다시 씁니다</h3><p>막힌 지점과 해결 방법을 남겨 같은 문제를 다시 처음부터 찾지 않도록 합니다.</p></article>
+          <article><span>4</span><h3>사람이 이해할 수 있게 정리합니다</h3><p>내가 이해한 내용을 표, 흐름, 문서로 바꾸어 다른 사람도 확인할 수 있게 합니다.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section id="update" class="section wrap">
+      <p class="section-kicker">07 · UPDATE DEVICE</p>
+      <h2>기록이 늘어나도 다시 계산할 수 있게</h2>
+      <div class="update-layout">
+        <div class="update-flow">
+          <div><strong>1</strong><span>리추얼·출석·제출 기록</span></div><b>→</b>
+          <div><strong>2</strong><span>결정적 규칙으로 숫자 재계산</span></div><b>→</b>
+          <div><strong>3</strong><span>날짜·근거가 있는 문장 후보</span></div><b>→</b>
+          <div><strong>4</strong><span>내가 승인한 문장만 사이트 반영</span></div>
+        </div>
+        <div class="update-copy">
+          <h3>같은 입력이면 같은 출력</h3>
+          <p>최종 제출용 장치는 실행 시각이나 즉석 AI 응답을 결과에 넣지 않습니다. 같은 JSON 입력을 두 번 실행했을 때 동일한 정렬과 동일한 문장 후보가 나오도록 만들고, 두 결과의 SHA-256을 비교해 확인할 예정입니다.</p>
+          <p>AI를 사용할 경우에도 AI가 사이트를 자동 수정하지 않습니다. 후보를 만들고, 최종 반영 여부는 사용자가 선택하는 구조로 분리합니다.</p>
+          <span class="status-pill">장치 패키지 제작 중</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="documents" class="section alt">
+      <div class="wrap documents-layout">
+        <div>
+          <p class="section-kicker">08 · APPLICATION</p>
+          <h2>지원 문서</h2>
+          <p class="lead compact">이 사이트와 같은 사실을 기준으로 이력서, 자기소개서, 경력기술서를 별도 제출 파일로 구성합니다.</p>
+        </div>
+        <div class="document-cards">
+          <article><strong>이력서</strong><span>학력 · 경력 · 프로젝트 · 기술</span></article>
+          <article><strong>자기소개서</strong><span>이 페이지의 핵심 서사를 약 1,500자로 정리</span></article>
+          <article><strong>경력기술서</strong><span>능력 + Situation · Action · Result 형태</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="verification">
+      <p class="section-kicker">09 · VERIFICATION</p>
+      <h2>무엇을 어디에서 확인할 수 있나요?</h2>
+      <div class="verification-grid">
+        <article><strong>이야기</strong><p>01 STORY에서 고비 → 다시 시작 → 현재의 흐름을 확인할 수 있습니다.</p></article>
+        <article><strong>숫자</strong><p>03 EVIDENCE에서 리추얼·출석·제출 기록 숫자와 날짜별 장면을 확인할 수 있습니다.</p></article>
+        <article><strong>대표작</strong><p>04 SELECTED WORKS에서 T10 논문과 보안·개발 프로젝트를 확인할 수 있습니다.</p></article>
+        <article><strong>갱신 방식</strong><p>07 UPDATE DEVICE에서 기록 → 계산 → 후보 → 사용자 승인 구조를 확인할 수 있습니다.</p></article>
+      </div>
+
+      <div class="ai-box">
+        <h3>AI와 내가 나눈 역할</h3>
+        <p><strong>AI에게 맡긴 일</strong> 기록에서 반복되는 패턴을 정리하고, 사이트 구조와 문장 후보를 만드는 일을 맡겼습니다.</p>
+        <p><strong>내가 직접 판단한 일</strong> 실제 경험과 각색을 구분하고, 공개할 경험·숫자·프로젝트와 최종 표현을 선택합니다.</p>
+        <p><strong>AI 제안을 따르지 않은 일</strong> 실제보다 과장되는 ‘리더십’ 표현이나, 기록과 연결되지 않는 일반적인 강점 표현은 제외했습니다.</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <p>김유미 · Cybersecurity / Log Analysis / Automation</p>
-      <p><a href="https://github.com/youmjjang" target="_blank" rel="noopener noreferrer">github.com/youmjjang</a></p>
-      <p class="footer-note">이 페이지의 기록과 문장은 실제 경험과 리추얼 기록을 기준으로 정리했습니다.</p>
+    <div class="wrap footer-grid">
+      <div><strong>김유미</strong><p>Cybersecurity · Log Analysis · Automation</p></div>
+      <div class="footer-links"><a href="https://github.com/youmjjang" target="_blank" rel="noopener">GitHub</a><a href="#top">맨 위로 ↑</a></div>
     </div>
+    <div class="wrap footer-note">실제 경험, T09·T11 서사 문서와 리추얼 기록을 기준으로 정리했으며, 미래를 상상해 작성했던 T11 15~16장의 내용은 현재 경험으로 사용하지 않았습니다.</div>
   </footer>
 </body>
 </html>
