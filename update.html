@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기록 업데이트 도구 | 김유미 Career Story</title>
+  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="bra.css?v=20260928" />
+</head>
+<body class="doc-page">
+  <main class="doc-wrap">
+    <section class="doc-paper">
+      <p class="section-kicker">RECORD UPDATE TOOL</p>
+      <h1>새 기록을 넣고 다시 계산하기</h1>
+      <p class="doc-meta">새로운 기록을 JSON으로 추가하면 기록 수치와 문단 후보를 다시 만듭니다. 같은 입력을 사용하면 같은 결과가 나옵니다.</p>
+
+      <div class="update-layout">
+        <div>
+          <textarea id="recordInput" class="record-input" aria-label="새 기록 JSON"></textarea>
+          <div class="hero-actions">
+            <button class="button primary" id="rebuild" type="button">다시 계산</button>
+            <button class="button" id="resetData" type="button">기본값 복원</button>
+          </div>
+        </div>
+        <aside class="update-copy">
+          <h2>재계산 결과</h2>
+          <div id="metricOutput"></div>
+          <h2>문단 후보</h2>
+          <p id="paragraphOutput">실행하면 결과가 표시됩니다.</p>
+        </aside>
+      </div>
+
+      <div class="note-box">
+        <strong>확인 방법</strong>
+        <p>같은 JSON을 두 번 넣고 ‘다시 계산’을 눌러 숫자와 문단 후보가 동일하게 나오는지 확인할 수 있습니다.</p>
+      </div>
+      <a class="back-link" href="index.html">← Career Story로 돌아가기</a>
+    </section>
+  </main>
+  <script src="update.js?v=20260928"></script>
+</body>
+</html>
