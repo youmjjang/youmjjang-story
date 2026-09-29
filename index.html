@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="김유미의 경험, 성장 기록, 보안 프로젝트와 대표작을 담은 커리어 스토리" />
+  <meta name="description" content="김유미의 경험, 성장 기록과 보안 프로젝트를 담은 커리어 스토리" />
   <title>김유미 | Career Story</title>
   <link rel="stylesheet" href="style.css?v=6" />
   <link rel="stylesheet" href="bra.css?v=20260930-gigang-hd" />
@@ -18,7 +18,7 @@
         <p class="hero-summary">컴퓨터소프트웨어 전공 경험과 다양한 현장 경험을 거쳐, 현재는 로그 분석과 보안 자동화를 중심으로 결과물을 만들고 있습니다.</p>
         <div class="hero-actions">
           <a class="button primary" href="#story">이야기 보기</a>
-          <a class="button" href="#works">대표작 보기</a>
+          <a class="button" href="#works">프로젝트 보기</a>
           <a class="button" href="#documents">문서 보기</a>
           <a class="button" href="https://github.com/youmjjang" target="_blank" rel="noopener">GitHub</a>
           <a class="button" href="https://blog.naver.com/youumii2595" target="_blank" rel="noopener">Blog</a>
@@ -38,7 +38,7 @@
       <a href="#story">이야기</a>
       <a href="#strengths">3가지 능력</a>
       <a href="#numbers">피드백</a>
-      <a href="#works">대표작</a>
+      <a href="#works">프로젝트</a>
       <a href="#timeline">경험</a>
       <a href="#documents">문서</a>
     </div>
@@ -81,12 +81,20 @@
     </section>
 
     <section id="works" class="section alt"><div class="wrap">
-      <p class="section-kicker">04 · SELECTED WORKS</p><h2>대표작</h2>
+      <p class="section-kicker">04 · PROJECTS</p><h2>프로젝트</h2>
       <div class="works-grid">
         <article class="work-card featured">
           <div class="work-top"><span class="badge">T10</span><span class="work-date">2026-09-21</span></div>
           <h3>모의 웹 서버 로그에서 시간 구간과 HTTP 4xx 경고 기준값이 이상행동 탐지 성능에 미치는 영향</h3>
           <p>Nginx 접근 로그와 비슷한 모의 웹 로그를 30회 생성하고, 같은 IP의 HTTP 4xx 오류를 30초·60초·120초 동안 집계했습니다. 각 시간 구간에서 3·5·8·12회 기준을 바꾸어 총 12개 조건을 비교했습니다.</p>
+          <div class="what-i-did">
+            <strong>내가 한 일</strong>
+            <ul class="clean-list">
+              <li>시간 구간 3개와 경고 기준값 4개를 조합해 12개 실험 조건을 직접 설계했습니다.</li>
+              <li>모의 로그 생성과 반복 실험을 자동화하고 조건별 탐지 결과와 오탐 변화를 비교했습니다.</li>
+              <li>실제 사용자 로그가 아니라는 점과 결과의 일반화 한계를 명시해 재현 가능한 실험 기록으로 정리했습니다.</li>
+            </ul>
+          </div>
           <p class="scope-note">최종 원자료: IP 4,800개 · 로그 54,607줄. 실제 사용자 로그가 아닌 연구용 모의 데이터이며 특정 기준을 실제 서비스의 최적값으로 일반화하지 않습니다.</p>
           <div class="tag-row"><span>Web Log</span><span>HTTP 4xx</span><span>False Positive</span><span>Reproducibility</span></div>
           <details class="work-preview">
@@ -108,7 +116,16 @@
 
         <article class="work-card">
           <span class="badge">PERSONAL</span><h3>Mini SOC</h3>
-          <p>Python으로 웹 로그를 읽어 오류 상태와 IP별 반복 접근을 탐지하고, 경보 JSON·알림 서버·일일 리포트까지 연결했습니다.</p>
+          <p>Docker와 Nginx로 테스트 환경을 만들고, Python으로 웹 접근 로그를 분석해 탐지·경보·리포트까지 이어지는 작은 관제 흐름을 직접 구현한 개인 프로젝트입니다.</p>
+          <div class="what-i-did">
+            <strong>내가 한 일 · 개선한 점</strong>
+            <ul class="clean-list">
+              <li>Nginx access log를 읽어 IP, 요청 경로, 상태코드 등을 파싱하고 HTTP 오류 이벤트를 추출했습니다.</li>
+              <li>단순 상태코드 확인에서 끝나지 않도록 IP별 반복 접근 횟수를 집계해 경보 JSON과 incident 기록으로 연결했습니다.</li>
+              <li>Flask 알림 서버와 Webhook을 연결하고, 날짜별 탐지 건수를 Markdown 일일 리포트로 자동 생성하도록 확장했습니다.</li>
+              <li>알림 전송이 실패해도 로그 분석 자체가 멈추지 않도록 연결 오류 예외 처리를 추가했습니다.</li>
+            </ul>
+          </div>
           <div class="tag-row"><span>Python</span><span>Docker</span><span>Nginx</span><span>Flask</span></div>
           <details class="work-preview">
             <summary>구현 화면 보기</summary>
@@ -124,9 +141,18 @@
         <article class="work-card">
           <span class="badge neutral">TEAM</span><h3>기강</h3>
           <p><strong>Generative AI Inspection &amp; Governance Across Network Gateways</strong></p>
-          <p>외부 AI·SaaS 접근과 DB 로그를 연결해 정책 판단·승인·경고·차단 흐름으로 이어가는 보안 프로젝트입니다.</p>
-          <div class="project-flow"><span>웹/DB 이벤트</span><b>→</b><span>정책 판단</span><b>→</b><span>ALLOW / WATCH / BLOCK</span><b>→</b><span>경고·차단</span></div>
-          <div class="tag-row"><span>Zero Trust</span><span>RBAC</span><span>Log Correlation</span></div>
+          <p>사내 사용자의 외부 AI·SaaS 접근과 DB 접근 이력을 함께 수집하고, 위험도 판단 결과를 경고·차단과 관리자 확인 흐름으로 이어가는 팀 보안 프로젝트입니다.</p>
+          <div class="project-flow"><span>웹/DB 이벤트</span><b>→</b><span>규칙·상관분석</span><b>→</b><span>Normal / Watch / Critical</span><b>→</b><span>경고·차단</span></div>
+          <div class="what-i-did">
+            <strong>내 역할 · 개선한 점</strong>
+            <ul class="clean-list">
+              <li>서버와 DB 연동 파트를 맡아 웹 접근 이벤트와 DB 접근 로그를 수집해 판단 단계로 전달하는 흐름을 구현했습니다.</li>
+              <li>위험 사이트를 AI가 전부 판단하는 구조 대신, 알려진 SaaS 정책과 로그 상관분석을 먼저 거친 뒤 필요한 경우 AI 위험도 판단을 결합하도록 구조를 보완했습니다.</li>
+              <li>사용자 PC에서 웹 접근과 파일 업로드·붙여넣기 시도를 감지해 경고 또는 차단으로 이어지는 단말 측 흐름을 연결했습니다.</li>
+              <li>사용자용·관리자용 실행 흐름을 분리하고, 사용자 화면에서 관리자 대시보드로 바로 이동할 수 있던 동선을 제거했습니다.</li>
+            </ul>
+          </div>
+          <div class="tag-row"><span>Zero Trust</span><span>RBAC</span><span>Log Correlation</span><span>Endpoint Control</span></div>
           <details class="work-preview">
             <summary>구현 화면 보기</summary>
             <div class="work-preview-body">
@@ -139,7 +165,16 @@
 
         <article class="work-card">
           <span class="badge neutral">APP</span><h3>출발시간 알람 앱</h3>
-          <p>출발 목표 시각을 기준으로 대중교통·도보 경로를 계산하고, 추천 출발 시각과 경로 상세를 보여 주며 출발 알림을 등록할 수 있도록 구현했습니다.</p>
+          <p>목표 도착 시각과 이동 경로를 기준으로 필요한 이동 시간을 계산해 추천 출발 시각을 보여 주고, 출발 알림까지 등록할 수 있도록 만든 이동 보조 앱입니다.</p>
+          <div class="what-i-did">
+            <strong>내가 한 일 · 개선한 점</strong>
+            <ul class="clean-list">
+              <li>장소 자동완성과 현재 위치 검색을 연결하고, 사용자가 목적지를 선택하면 경로 탐색으로 이어지도록 구현했습니다.</li>
+              <li>대중교통 경로에서 환승과 도보 구간을 함께 확인할 수 있도록 경로 상세 정보를 정리했습니다.</li>
+              <li>이동 시간만 보여 주는 데서 끝나지 않고 목표 시각을 기준으로 추천 출발 시각을 계산해 알림 등록까지 이어지도록 구성했습니다.</li>
+              <li>검색·경로·알림 기능을 한 번에 만들기보다 기능별로 나눠 실행 결과를 확인하면서 수정했습니다.</li>
+            </ul>
+          </div>
           <div class="tag-row"><span>Flutter</span><span>Route API</span><span>Transit</span><span>Alarm</span></div>
           <details class="work-preview">
             <summary>앱 화면 보기</summary>
