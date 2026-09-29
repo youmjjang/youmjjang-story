@@ -28,3 +28,8 @@
     margin:0!important;
   }
 }
+
+/* Hide the thin white edge baked into the Gigang preview. */
+.work-shot:has(img[src*="nexusguard-dashboard"]) img{
+  clip-path:inset(0 0 0 1% round 11px);
+}
