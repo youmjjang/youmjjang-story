@@ -6,7 +6,7 @@
   <meta name="description" content="김유미의 경험, 성장 기록, 보안 프로젝트와 대표작을 담은 커리어 스토리" />
   <title>김유미 | Career Story</title>
   <link rel="stylesheet" href="style.css?v=6" />
-  <link rel="stylesheet" href="bra.css?v=20260928" />
+  <link rel="stylesheet" href="bra.css?v=20260929" />
 </head>
 <body>
   <header class="hero" id="top">
@@ -84,10 +84,76 @@
     <section id="works" class="section alt"><div class="wrap">
       <p class="section-kicker">04 · SELECTED WORKS</p><h2>대표작</h2>
       <div class="works-grid">
-        <article class="work-card featured"><div class="work-top"><span class="badge">T10</span><span class="work-date">2026-09-21</span></div><h3>모의 웹 서버 로그에서 시간 구간과 HTTP 4xx 경고 기준값이 이상행동 탐지 성능에 미치는 영향</h3><p>Nginx 접근 로그와 비슷한 모의 웹 로그를 30회 생성하고, 같은 IP의 HTTP 4xx 오류를 30초·60초·120초 동안 집계했습니다. 각 시간 구간에서 3·5·8·12회 기준을 바꾸어 총 12개 조건을 비교했습니다.</p><p class="scope-note">최종 원자료: IP 4,800개 · 로그 54,607줄. 실제 사용자 로그가 아닌 연구용 모의 데이터이며 특정 기준을 실제 서비스의 최적값으로 일반화하지 않습니다.</p><div class="tag-row"><span>Web Log</span><span>HTTP 4xx</span><span>False Positive</span><span>Reproducibility</span></div></article>
-        <article class="work-card"><span class="badge">PERSONAL</span><h3>Mini SOC</h3><p>Python으로 웹 로그를 읽어 오류 상태와 IP별 반복 접근을 탐지하고, 경보 JSON·알림 서버·일일 리포트까지 연결했습니다.</p><div class="tag-row"><span>Python</span><span>Docker</span><span>Nginx</span><span>Flask</span></div></article>
-        <article class="work-card"><span class="badge neutral">TEAM</span><h3>GIGANG</h3><p><strong>Generative AI Inspection &amp; Governance Across Network Gateways</strong></p><p>외부 AI·SaaS 접근과 DB 로그를 연결해 정책 판단·승인·경고·차단 흐름으로 이어가는 보안 프로젝트입니다.</p><div class="project-flow"><span>웹/DB 이벤트</span><b>→</b><span>정책 판단</span><b>→</b><span>ALLOW / WATCH / BLOCK</span><b>→</b><span>경고·차단</span></div><div class="tag-row"><span>Zero Trust</span><span>RBAC</span><span>Log Correlation</span></div></article>
-        <article class="work-card"><span class="badge neutral">ANDROID</span><h3>출발시간 알람 앱</h3><p>목적지 검색·자동완성·위치 API를 연결해 이동 정보를 계산하고 출발 시점을 안내하는 안드로이드 앱을 구현했습니다.</p><div class="tag-row"><span>Android</span><span>Retrofit</span><span>RecyclerView</span></div></article>
+        <article class="work-card featured">
+          <div class="work-top"><span class="badge">T10</span><span class="work-date">2026-09-21</span></div>
+          <h3>모의 웹 서버 로그에서 시간 구간과 HTTP 4xx 경고 기준값이 이상행동 탐지 성능에 미치는 영향</h3>
+          <p>Nginx 접근 로그와 비슷한 모의 웹 로그를 30회 생성하고, 같은 IP의 HTTP 4xx 오류를 30초·60초·120초 동안 집계했습니다. 각 시간 구간에서 3·5·8·12회 기준을 바꾸어 총 12개 조건을 비교했습니다.</p>
+          <p class="scope-note">최종 원자료: IP 4,800개 · 로그 54,607줄. 실제 사용자 로그가 아닌 연구용 모의 데이터이며 특정 기준을 실제 서비스의 최적값으로 일반화하지 않습니다.</p>
+          <div class="tag-row"><span>Web Log</span><span>HTTP 4xx</span><span>False Positive</span><span>Reproducibility</span></div>
+          <details class="work-preview">
+            <summary>실험 구조 보기</summary>
+            <div class="work-preview-body">
+              <div class="experiment-preview" aria-label="T10 실험 구조 미리보기">
+                <div class="preview-window-bar"><span></span><span></span><span></span><b>HTTP 4xx 탐지 조건 비교</b></div>
+                <div class="experiment-grid">
+                  <div><strong>30초</strong><span>3</span><span>5</span><span>8</span><span>12</span></div>
+                  <div><strong>60초</strong><span>3</span><span>5</span><span>8</span><span>12</span></div>
+                  <div><strong>120초</strong><span>3</span><span>5</span><span>8</span><span>12</span></div>
+                </div>
+                <p>시간 구간 3개 × 경고 기준값 4개 = 12개 조건 비교</p>
+              </div>
+              <p class="preview-caption">실제 결과 캡처가 아니라 실험 구조를 포트폴리오용으로 재구성한 미리보기입니다.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="work-card">
+          <span class="badge">PERSONAL</span><h3>Mini SOC</h3>
+          <p>Python으로 웹 로그를 읽어 오류 상태와 IP별 반복 접근을 탐지하고, 경보 JSON·알림 서버·일일 리포트까지 연결했습니다.</p>
+          <div class="tag-row"><span>Python</span><span>Docker</span><span>Nginx</span><span>Flask</span></div>
+          <details class="work-preview">
+            <summary>구현 화면 보기</summary>
+            <div class="work-preview-body">
+              <figure class="work-shot">
+                <img src="https://raw.githubusercontent.com/youmjjang/About-me/main/assets/minisoc-dashboard-20260915.webp" alt="Mini SOC 대시보드 구현 화면" loading="lazy" />
+                <figcaption>Mini SOC 대시보드 구현 화면</figcaption>
+              </figure>
+            </div>
+          </details>
+        </article>
+
+        <article class="work-card">
+          <span class="badge neutral">TEAM</span><h3>GIGANG</h3>
+          <p><strong>Generative AI Inspection &amp; Governance Across Network Gateways</strong></p>
+          <p>외부 AI·SaaS 접근과 DB 로그를 연결해 정책 판단·승인·경고·차단 흐름으로 이어가는 보안 프로젝트입니다.</p>
+          <div class="project-flow"><span>웹/DB 이벤트</span><b>→</b><span>정책 판단</span><b>→</b><span>ALLOW / WATCH / BLOCK</span><b>→</b><span>경고·차단</span></div>
+          <div class="tag-row"><span>Zero Trust</span><span>RBAC</span><span>Log Correlation</span></div>
+          <details class="work-preview">
+            <summary>구현 화면 보기</summary>
+            <div class="work-preview-body">
+              <figure class="work-shot">
+                <img src="https://raw.githubusercontent.com/youmjjang/About-me/main/assets/nexusguard-dashboard-demo.png" alt="GIGANG 대시보드 데모 화면" loading="lazy" />
+                <figcaption>GIGANG 대시보드 데모 화면</figcaption>
+              </figure>
+            </div>
+          </details>
+        </article>
+
+        <article class="work-card">
+          <span class="badge neutral">ANDROID</span><h3>출발시간 알람 앱</h3>
+          <p>목적지 검색·자동완성·위치 API를 연결해 이동 정보를 계산하고 출발 시점을 안내하는 안드로이드 앱을 구현했습니다.</p>
+          <div class="tag-row"><span>Android</span><span>Retrofit</span><span>RecyclerView</span></div>
+          <details class="work-preview">
+            <summary>앱 화면 보기</summary>
+            <div class="work-preview-body">
+              <figure class="work-shot">
+                <img src="https://raw.githubusercontent.com/youmjjang/About-me/main/assets/capstone-reconstruction.png" alt="출발시간 알람 앱 화면" loading="lazy" />
+                <figcaption>출발시간 알람 앱 화면</figcaption>
+              </figure>
+            </div>
+          </details>
+        </article>
+
         <article class="work-card pending"><span class="badge neutral">T13</span><h3>다음 앱 프로젝트</h3><p>T13에서 제작할 앱 결과물을 위한 자리입니다. 완성 후 앱 이름과 핵심 화면, 실행 링크로 교체할 예정입니다.</p><div class="tag-row"><span>Coming soon</span></div></article>
       </div>
     </div></section>
