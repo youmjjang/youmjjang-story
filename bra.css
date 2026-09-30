@@ -24,3 +24,9 @@
 .work-shot:has(img[src*="nexusguard-dashboard"])::after{
   display:none!important;
 }
+
+/* Keep the letter episode emphasized through wording, not bold styling. */
+.story-content p:nth-of-type(3) strong{
+  font-weight:inherit!important;
+  color:inherit!important;
+}
