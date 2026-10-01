@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HTTP Status Pattern Analyzer | 김유미</title>
+<style>
+:root{--bg:#f4f0e6;--paper:#fffdf8;--ink:#30352d;--muted:#71766e;--line:#d9d3c6;--olive:#697052;--olive2:#4e563c;--brown:#8b6f58;--warn:#7d4738;--warnbg:#fff0ea;--ok:#4f6c56;--okbg:#edf6ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR","Segoe UI",sans-serif;line-height:1.6}.wrap{width:min(1080px,calc(100% - 28px));margin:28px auto 70px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;margin-bottom:18px;box-shadow:0 12px 30px rgba(70,62,48,.07)}h1{font-size:clamp(30px,5vw,50px);line-height:1.08;margin:0 0 10px}.paper-title{color:var(--muted);font-size:15px}.lead{font-size:19px;max-width:880px}.note{color:var(--muted);font-size:13px}.step{display:flex;gap:10px;align-items:center;margin-bottom:16px}.step b{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--olive);color:#fff}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.btn,button,select{border:1px solid var(--line);border-radius:11px;font:inherit}.btn,button{padding:10px 14px;background:#fff;font-weight:700;cursor:pointer}.btn{display:inline-block;text-decoration:none;color:inherit}.primary{background:var(--olive2);color:#fff;border-color:var(--olive2)}input[type=file]{max-width:100%}textarea{width:100%;min-height:210px;margin-top:13px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fbfaf5;font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}select{padding:8px 30px 8px 10px;background:#fff}.msg{margin-top:12px;padding:11px 13px;border-radius:11px;font-weight:700}.ok{background:var(--okbg);color:var(--ok)}.err{background:var(--warnbg);color:var(--warn)}.hidden{display:none!important}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}.metric{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fff}.metric b{font-size:26px;display:block}.metric span{font-size:12px;color:var(--muted)}.alerts{display:grid;gap:11px}.alert{border:1px solid #e4b9ac;border-radius:15px;background:var(--warnbg);padding:16px}.alerttop{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#edc6bb;color:#673327;font-size:12px;font-weight:800}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:15px}.box{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff}.rule{display:grid;grid-template-columns:1fr auto auto;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}.rule:last-child{border-bottom:0}.back{margin-bottom:14px}.muted{color:var(--muted)}@media(max-width:760px){.summary{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.card{padding:20px}}@media(max-width:450px){.summary{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<a class="btn back" href="index.html#works">← Story 사이트로 돌아가기</a>
+<section class="card">
+<p class="note">BR-B · T10 논문 반영 애플리케이션</p>
+<h1>HTTP Status Pattern Analyzer</h1>
+<p class="paper-title">웹 서버 로그에서 HTTP 상태코드 유형별 시간 구간 및 경고 임계값 설정에 따른 이상 패턴 탐지 성능 비교</p>
+<p class="lead"><strong>웹 로그 분석이 익숙하지 않은 사용자가 대량 로그에서 먼저 확인할 Host/IP와 그 이유를 빠르게 찾을 수 있도록 돕습니다.</strong></p>
+<p class="note">논문의 모의실험에서 유형별 F1이 가장 높았던 기준을 기본 분석 규칙으로 사용합니다. 공격을 확정하는 도구가 아니라 로그 검토 우선순위를 좁혀주는 보조 도구입니다.</p>
+</section>
+
+<section class="card">
+<div class="step"><b>1</b><h2>로그 넣기</h2></div>
+<div class="row"><input id="file" type="file" accept=".log,.txt,.csv,.json,.jsonl"><button id="sample">예시 로그 불러오기</button><label>형식 <select id="format"><option value="auto">자동 감지</option><option value="common">Nginx/Apache</option><option value="csv">CSV</option><option value="jsonl">JSON/JSONL</option></select></label></div>
+<textarea id="input" placeholder="로그 파일을 선택하거나 예시 로그를 불러오세요."></textarea>
+<div id="msg" class="hidden"></div>
+</section>
+
+<section class="card">
+<div class="step"><b>2</b><h2>분석하기</h2></div>
+<p class="note">기본값은 논문 기반 자동 기준입니다: 401/403 = 60초·5회, 404 = 120초·8회, 429 = 60초·3회, 5xx = 30초·3회.</p>
+<button id="analyze" class="primary">논문 기준으로 분석하기</button>
+</section>
+
+<section id="result" class="card hidden">
+<div class="step"><b>3</b><h2>분석 결과</h2></div>
+<div id="summary" class="summary"></div>
+<div id="alerts" class="alerts"></div>
+<div class="grid"><div class="box"><h3>논문 기반 기준</h3><div id="rules"></div></div><div class="box"><h3>해석</h3><p class="muted">반복 횟수가 기준을 넘은 Host/IP부터 우선 확인하도록 보여줍니다. 401/403은 인증·권한, 404는 경로 탐색, 429는 과도한 요청, 5xx는 서버 오류의 집중 발생을 의미합니다.</p></div></div>
+</section>
+</main>
+<script>
+const RULES={AUTH:{w:60,t:5,f:0.950},NOT_FOUND:{w:120,t:8,f:0.950},RATE_LIMIT:{w:60,t:3,f:0.961},SERVER_ERROR:{w:30,t:3,f:0.934}};
+const LABEL={AUTH:"인증·권한 오류",NOT_FOUND:"경로 탐색 오류",RATE_LIMIT:"과도한 요청",SERVER_ERROR:"서버 오류"};
+const sampleText=`192.0.2.10 - - [30/Sep/2026:09:00:01 +0900] "POST /login HTTP/1.1" 401 120
+192.0.2.10 - - [30/Sep/2026:09:00:10 +0900] "POST /login HTTP/1.1" 401 118
+192.0.2.10 - - [30/Sep/2026:09:00:21 +0900] "GET /admin HTTP/1.1" 403 150
+192.0.2.10 - - [30/Sep/2026:09:00:39 +0900] "GET /admin HTTP/1.1" 403 150
+192.0.2.10 - - [30/Sep/2026:09:00:58 +0900] "POST /login HTTP/1.1" 401 120
+198.51.100.55 - - [30/Sep/2026:09:02:01 +0900] "GET /.env HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:02:10 +0900] "GET /wp-admin HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:02:20 +0900] "GET /admin-old HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:02:31 +0900] "GET /missing HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:02:48 +0900] "GET /robots-old HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:03:02 +0900] "GET /old-login HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:03:13 +0900] "GET /backup HTTP/1.1" 404 90
+198.51.100.55 - - [30/Sep/2026:09:03:25 +0900] "GET /test-admin HTTP/1.1" 404 90
+203.0.113.77 - - [30/Sep/2026:09:04:01 +0900] "GET /api/search HTTP/1.1" 429 80
+203.0.113.77 - - [30/Sep/2026:09:04:18 +0900] "GET /api/search HTTP/1.1" 429 80
+203.0.113.77 - - [30/Sep/2026:09:04:34 +0900] "GET /api/items HTTP/1.1" 429 80
+192.0.2.90 - - [30/Sep/2026:09:06:01 +0900] "GET /api/orders HTTP/1.1" 500 100
+192.0.2.90 - - [30/Sep/2026:09:06:12 +0900] "GET /api/orders HTTP/1.1" 502 100
+192.0.2.90 - - [30/Sep/2026:09:06:24 +0900] "GET /checkout HTTP/1.1" 503 100`;
+const $=id=>document.getElementById(id);
+$("sample").onclick=()=>{$("input").value=sampleText;show("예시 로그를 불러왔습니다.","ok")};
+$("file").onchange=async e=>{const f=e.target.files[0];if(f){$("input").value=await f.text();show(f.name+" 파일을 읽었습니다.","ok")}};
+function show(t,c){$("msg").textContent=t;$("msg").className="msg "+c}
+function parseDate(s){const m=s.match(/(\d{2})\/([A-Za-z]{3})\/(\d{4}):(\d{2}):(\d{2}):(\d{2})/);if(m){const mo={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11}[m[2]];return new Date(+m[3],mo,+m[1],+m[4],+m[5],+m[6])}const d=new Date(s);return Number.isNaN(d.getTime())?null:d}
+function commonLine(line){const m=line.trim().match(/^(\S+)\s+\S+\s+\S+\s+\[([^\]]+)\]\s+"([A-Z]+)\s+([^"\s]+)(?:\s+HTTP\/[0-9.]+)?"\s+(\d{3})\s+\S+/);if(!m)return null;const time=parseDate(m[2]);return time?{host:m[1],time,method:m[3],path:m[4],status:+m[5]}:null}
+function norm(o){const tv=o.timestamp??o.time??o.datetime??o["@timestamp"],host=o.ip??o.host??o.client_ip??o.remote_addr,path=o.path??o.url??o.uri??o.request_uri,status=+(o.status??o.status_code??o.http_status);const time=parseDate(String(tv||""));return time&&host&&path&&Number.isFinite(status)?{host:String(host),time,method:String(o.method??o.http_method??"UNKNOWN"),path:String(path),status}:null}
+function detect(text){const t=text.trim();if(!t)return null;try{const p=JSON.parse(t),a=Array.isArray(p)?p:[p];if(a.some(norm))return"jsonl"}catch{}const lines=t.split(/\r?\n/).filter(Boolean).slice(0,6);let c=0,v=0,j=0;for(const l of lines){if(commonLine(l))c++;try{if(norm(JSON.parse(l)))j++}catch{}const a=l.split(",");if(a.length>=5&&parseDate(a[0])&&Number.isFinite(+a[4]))v++}const n=Math.max(1,Math.ceil(lines.length/2));if(c>=n)return"common";if(j>=n)return"jsonl";if(v>=n||/^timestamp,ip,/i.test(lines[0]||""))return"csv";return null}
+function parse(text,fmt){let r=[],bad=0;if(fmt==="common"){for(const l of text.split(/\r?\n/)){if(!l.trim())continue;const x=commonLine(l);x?r.push(x):bad++}}else if(fmt==="csv"){const lines=text.split(/\r?\n/).filter(Boolean);let start=/^timestamp,ip,/i.test(lines[0]||"")?1:0;for(const l of lines.slice(start)){const a=l.split(",");const time=parseDate(a[0]);if(time&&a[1]&&a[3]&&Number.isFinite(+a[4]))r.push({time,host:a[1],method:a[2]||"UNKNOWN",path:a[3],status:+a[4]});else bad++}}else{try{const p=JSON.parse(text),a=Array.isArray(p)?p:[p];for(const o of a){const x=norm(o);x?r.push(x):bad++}}catch{for(const l of text.split(/\r?\n/)){if(!l.trim())continue;try{const x=norm(JSON.parse(l));x?r.push(x):bad++}catch{bad++}}}}return{r,bad}}
+function cat(s){if(s===401||s===403)return"AUTH";if(s===404)return"NOT_FOUND";if(s===429)return"RATE_LIMIT";if(s>=500&&s<600)return"SERVER_ERROR";return null}
+function burst(a,w){a=[...a].sort((x,y)=>x.time-y.time);let l=0,b=0;for(let i=0;i<a.length;i++){while(a[i].time-a[l].time>w*1000)l++;b=Math.max(b,i-l+1)}return b}
+function top(a){const m={};a.forEach(x=>m[x.path]=(m[x.path]||0)+1);const z=Object.entries(m).sort((a,b)=>b[1]-a[1])[0];return z?z[0]+" ("+z[1]+"회)":"-"}
+$("analyze").onclick=()=>{const text=$("input").value.trim();if(!text)return show("분석할 로그가 없습니다.","err");let fmt=$("format").value;if(fmt==="auto")fmt=detect(text);if(!fmt)return show("로그 형식을 자동 감지하지 못했습니다. 형식을 직접 선택해 주세요.","err");const o=parse(text,fmt);if(!o.r.length)return show("읽을 수 있는 로그가 없습니다.","err");const groups=new Map;for(const x of o.r){const c=cat(x.status);if(!c)continue;const k=x.host+"|"+c;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)}let rows=[];for(const [k,a] of groups){const [host,c]=k.split("|"),rule=RULES[c],b=burst(a,rule.w);rows.push({host,c,b,path:top(a),review:b>=rule.t,rule})}rows.sort((a,b)=>Number(b.review)-Number(a.review)||b.b-a.b);const review=rows.filter(x=>x.review);$("summary").innerHTML=[["전체 로그",o.r.length],["Host/IP",new Set(o.r.map(x=>x.host)).size],["분석 패턴",rows.length],["우선 확인",review.length]].map(x=>'<div class="metric"><b>'+x[1]+'</b><span>'+x[0]+'</span></div>').join("");$("alerts").innerHTML=review.length?review.map(x=>'<div class="alert"><div class="alerttop"><div><strong>'+x.host+'</strong> <span class="badge">'+LABEL[x.c]+'</span></div><div>'+x.rule.w+'초 내 <b>'+x.b+'회</b> / 기준 '+x.rule.t+'회</div></div><p>주요 경로: <b>'+x.path+'</b></p><p class="note">'+(x.c==="AUTH"?"인증·권한 관련 오류가 반복되어 로그인 흐름을 먼저 확인할 필요가 있습니다.":x.c==="NOT_FOUND"?"존재하지 않는 경로 요청이 반복되어 경로 탐색 여부를 먼저 확인할 필요가 있습니다.":x.c==="RATE_LIMIT"?"429 응답이 짧은 시간에 반복되어 요청 빈도를 먼저 확인할 필요가 있습니다.":"5xx 오류가 짧은 시간에 집중되어 서버 오류 로그를 함께 확인할 필요가 있습니다.")+'</p></div>').join(""):'<div class="box">현재 기준에서 우선 확인할 항목이 없습니다.</div>';$("rules").innerHTML=Object.entries(RULES).map(([k,v])=>'<div class="rule"><strong>'+LABEL[k]+'</strong><span>'+v.w+'초 / '+v.t+'회</span><span>F1 '+v.f.toFixed(3)+'</span></div>').join("");$("result").classList.remove("hidden");show(fmt.toUpperCase()+" 형식으로 "+o.r.length+"건을 분석했습니다."+(o.bad?" 읽지 못한 "+o.bad+"건은 제외했습니다.":""),"ok");$("result").scrollIntoView({behavior:"smooth"})};
+</script>
+</body>
+</html>
