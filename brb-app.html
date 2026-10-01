@@ -39,33 +39,6 @@
 <div id="alerts" class="alerts"></div><div class="row" style="margin-top:14px"><button id="export" class="btn hidden">분석 결과 CSV 저장</button></div>
 <div class="grid"><div class="box"><h3>논문 기반 기준</h3><div id="rules"></div></div><div class="box"><h3>해석</h3><p class="muted">반복 횟수가 기준을 넘은 Host/IP부터 우선 확인하도록 보여줍니다. 401/403은 인증·권한, 404는 경로 탐색, 429는 과도한 요청, 5xx는 서버 오류의 집중 발생을 의미합니다.</p></div></div>
 </section>
-<section class="card">
-<div class="step"><b>✓</b><h2>짧은 검증 방법</h2></div>
-<p><strong>검증 위치:</strong> 포트폴리오의 프로젝트 영역에서 <em>HTTP Status Pattern Analyzer → 앱 실행하기</em>로 들어옵니다.</p>
-<ol>
-<li><strong>예시 로그 불러오기</strong>를 누릅니다.</li>
-<li><strong>논문 기준으로 분석하기</strong>를 누릅니다.</li>
-<li>분석 결과에서 <strong>우선 확인 Host/IP · 상태코드 유형 · 적용 시간 구간/반복 횟수 · 주요 경로 · 확인 이유</strong>가 표시되는지 확인합니다.</li>
-</ol>
-<p class="msg ok"><strong>통과 기준:</strong> 예시 로그의 401/403, 404, 429, 5xx 반복 패턴이 유형별 기준에 따라 우선 확인 항목으로 표시되고, 각 항목에 Host/IP와 적용 기준 및 이유가 함께 나오면 통과입니다. 잘못된 형식의 로그를 넣었을 때 오류 안내만 표시되고 페이지가 멈추지 않으면 예외 처리도 정상입니다.</p>
-</section>
-<section class="card">
-<div class="step"><b>AI</b><h2>AI 활용과 직접 판단</h2></div>
-<div class="grid">
-  <div class="box">
-    <h3>AI에게 맡긴 일</h3>
-    <p class="muted">로그 파서 코드 초안, 화면 구조, 모의실험 코드 작성 보조, 결과표 정리, README와 제출 문구 초안을 맡겼습니다.</p>
-  </div>
-  <div class="box">
-    <h3>직접 결정한 일</h3>
-    <p class="muted">4xx 전체를 한 기준으로 보는 방식의 한계를 확인하고 401/403·404·429·5xx로 유형을 나누었습니다. 앱의 목적도 공격 확정이 아니라 “먼저 검토할 로그를 좁혀주는 도구”로 정했습니다.</p>
-  </div>
-  <div class="box">
-    <h3>따르지 않은 AI 제안</h3>
-    <p class="muted">실험 결과만 보여주는 화면과 Streamlit 중심 구성을 사용하지 않고, 실제 로그 파일을 넣어 분석하는 앱과 공개 웹 버전으로 바꿨습니다.</p>
-  </div>
-</div>
-</section>
 </main>
 <script>
 
