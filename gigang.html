@@ -31,11 +31,13 @@ body{background:var(--gd-bg);color:var(--gd-ink)}
 .gd-after .gd-label{background:#e9efe3;color:#45513a}
 .gd-list{margin:10px 0 0;padding-left:20px}
 .gd-list li{margin:7px 0}
-.gd-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gd-gallery{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:24px}
 .gd-shot{margin:0;border:1px solid var(--gd-line);border-radius:18px;overflow:hidden;background:#fff}
 .gd-shot.wide{grid-column:1/-1}
+.gd-shot a{display:block;background:#0e1624;cursor:zoom-in}
+.gd-shot a:focus-visible{outline:3px solid var(--gd-olive);outline-offset:-3px}
 .gd-shot img{display:block;width:100%;height:auto;background:#0e1624}
-.gd-shot figcaption{padding:13px 15px;font-size:13px;color:var(--gd-muted);border-top:1px solid var(--gd-line)}
+.gd-shot figcaption{padding:16px 20px;font-size:14px;line-height:1.6;color:var(--gd-muted);border-top:1px solid var(--gd-line)}
 .gd-role{border-left:4px solid var(--gd-olive);padding-left:16px}
 .gd-note{background:#f8f5ed;border:1px solid var(--gd-line);border-radius:14px;padding:14px 16px;color:var(--gd-muted)}
 .gd-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
@@ -123,11 +125,11 @@ body{background:var(--gd-bg);color:var(--gd-ink)}
 <h2>실제 구현 화면</h2>
 <p>아래 이미지는 팀 프로젝트의 실제 실행·관제 화면입니다. 시연용 목업이 아니라 구현 과정에서 사용한 화면을 포트폴리오에 정리했습니다.</p>
 <div class="gd-gallery">
-<figure class="gd-shot wide"><img src="assets/gigang-overview-20261001.png" alt="GIGANG 관리자 대시보드 구현 화면" loading="eager"><figcaption>GIGANG 관리자 대시보드 · 종합 관제 구현 화면</figcaption></figure>
-<figure class="gd-shot"><img src="assets/gigang-killchain-20261001.png" alt="외부 침투 및 침해사고 심층 분석 화면" loading="eager"><figcaption>킬체인 분석 · 공격 경로와 상관분석 판단 근거</figcaption></figure>
-<figure class="gd-shot"><img src="assets/gigang-governance-20261001.png" alt="사내 섀도우 IT 및 생성형 AI 거버넌스 대시보드" loading="eager"><figcaption>AI·IT 거버넌스 · 외부 서비스 위험도와 승인·차단 관리</figcaption></figure>
-<figure class="gd-shot"><img src="assets/gigang-pipeline-20261001.png" alt="중앙 서버 파이프라인 및 수집 이벤트 화면" loading="eager"><figcaption>중앙 서버 파이프라인 · 실시간 수집 이벤트와 DB 감사 로그</figcaption></figure>
-<figure class="gd-shot wide"><img src="assets/gigang-block-20261001.png" alt="외부 AI 사이트에 사내 자료 입력 시도를 감지한 GIGANG 차단 안내 화면" loading="eager"><figcaption>사내 자료의 외부 입력 시도 감지 후 사용자에게 표시되는 차단·안내 화면</figcaption></figure>
+<figure class="gd-shot wide"><a href="assets/gigang-overview-20261001.png" target="_blank" rel="noopener" aria-label="이미지 원본 크게 보기"><img src="assets/gigang-overview-20261001.png" alt="GIGANG 관리자 대시보드 구현 화면" loading="eager"></a><figcaption>GIGANG 관리자 대시보드 · 종합 관제 구현 화면</figcaption></figure>
+<figure class="gd-shot"><a href="assets/gigang-killchain-20261001.png" target="_blank" rel="noopener" aria-label="이미지 원본 크게 보기"><img src="assets/gigang-killchain-20261001.png" alt="외부 침투 및 침해사고 심층 분석 화면" loading="eager"></a><figcaption>킬체인 분석 · 공격 경로와 상관분석 판단 근거</figcaption></figure>
+<figure class="gd-shot"><a href="assets/gigang-governance-20261001.png" target="_blank" rel="noopener" aria-label="이미지 원본 크게 보기"><img src="assets/gigang-governance-20261001.png" alt="사내 섀도우 IT 및 생성형 AI 거버넌스 대시보드" loading="eager"></a><figcaption>AI·IT 거버넌스 · 외부 서비스 위험도와 승인·차단 관리</figcaption></figure>
+<figure class="gd-shot"><a href="assets/gigang-pipeline-20261001.png" target="_blank" rel="noopener" aria-label="이미지 원본 크게 보기"><img src="assets/gigang-pipeline-20261001.png" alt="중앙 서버 파이프라인 및 수집 이벤트 화면" loading="eager"></a><figcaption>중앙 서버 파이프라인 · 실시간 수집 이벤트와 DB 감사 로그</figcaption></figure>
+<figure class="gd-shot wide"><a href="assets/gigang-block-20261001.png" target="_blank" rel="noopener" aria-label="이미지 원본 크게 보기"><img src="assets/gigang-block-20261001.png" alt="외부 AI 사이트에 사내 자료 입력 시도를 감지한 GIGANG 차단 안내 화면" loading="eager"></a><figcaption>사내 자료의 외부 입력 시도 감지 후 사용자에게 표시되는 차단·안내 화면</figcaption></figure>
 </div>
 </section>
 
